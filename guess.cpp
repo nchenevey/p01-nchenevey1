@@ -16,15 +16,18 @@ using namespace std;
   int randomNumber;
   int randomNumber1;
   int randomNumber2;
+  int randomNumber3;
 
   randomNumber = rand() % 2 + 1;
   randomNumber1 = rand() % 10 + 1;
   randomNumber2 = rand() % 100 + 1;
+  randomNumber3 = rand() % 1000 + 1;
 
   cout << "Select a difficulty:" << endl;
   cout << "(1) Easy: 1 guess, random number between 1 and 2" << endl;
   cout << "(2) Medium: 2 guesses, random number between 1 and 10" << endl;
   cout << "(3) Hard: 3 guesses, random number between 1 and 100" << endl;
+  cout << "(4) Extreme: 10 guesses, random number between 1 and 1000" << endl;
 
   cin >> diff;
    if( diff == 1 )
@@ -109,7 +112,7 @@ using namespace std;
    }
 
 
-   else if( diff = 3 )
+   else if( diff == 3 )
    {
        int X;
        int difference;
@@ -168,6 +171,68 @@ using namespace std;
       }
 
    }
+
+
+   else if( diff == 4 )
+   {
+      int gcount;
+      int guesstreme;
+      gcount = 0;
+      cout << "You have selected Extreme. You have 10 guesses. Pick a number between 1 and 1000" << endl;
+      while ( gcount < 10 );
+      {
+        cin >> guesstreme;
+        int range;
+        int A;
+        A = randomNumber3 - guesstreme;
+        range = abs(A);
+        if( range > 750 )
+        {
+        cout << "Your guess was at least 750 off!" << endl;
+        gcount++;
+        }
+        else if( (range <= 750) && (range > 500) )
+        {
+        cout << "Your guess was at least 500 off!" << endl;
+        gcount++;
+        }
+        else if( (range <= 500) && (range > 250) ) 
+        {
+         cout << "Your guess was at least 250 off!" << endl;
+         gcount++;
+        }
+        else if( (range <= 250) && (range > 100) )
+        {
+        cout << "Your guess was at least 100 off!" << endl;
+        gcount++;
+        }
+        else if( (range <= 100) && (range > 50) )
+        {
+        cout << "Your guess was at least 50 off!" << endl;
+        gcount++;
+        }
+        else if( (range <= 50) && (range > 20) )
+        {
+        cout << "Your guess was at least 20 off!" << endl;
+        gcount++;
+        }
+        else if( (range <= 20) && (range > 10) )
+        {
+        cout << "Your guess was at least 10 off!" << endl;
+        gcount++;
+        }
+        else if( (range <= 10) && (range > 5) )
+        {
+        cout << "Your guess was at least 5 off!" << endl;
+        gcount++;
+        }
+        else if( guesstreme == randomNumber3 )
+        {
+        cout << "Congratulations! You defeated Extreme mode! Press any button to continue or press N to exit." << endl;
+        }
+      }
+   }
+
  cin >> playagain;
  }while( playagain != 'N' && playagain != 'n' );
  
