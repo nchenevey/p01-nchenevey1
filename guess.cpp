@@ -175,66 +175,72 @@ using namespace std;
 
    else if( diff == 4 )
    {
-      int gcount;
+      
       int guesstreme;
-      gcount = 0;
-      cout << "You have selected Extreme. You have 10 guesses. Pick a number between 1 and 1000" << endl;
-      while ( gcount < 10 );
+      
+      cout << "You have selected Extreme. You have 15 guesses. Pick a number between 1 and 1000" << endl;
+      for ( int gcount = 0; gcount <= 15; gcount++ )
       {
         cin >> guesstreme;
         int range;
         int A;
         A = randomNumber3 - guesstreme;
         range = abs(A);
-        if( range > 750 )
+        if( guesstreme == randomNumber3 )
         {
-        cout << "Your guess was at least 750 off!" << endl;
-        gcount++;
+        cout << "Congratulations! You have defeated Extreme mode. Press any button to continue or N to exit." << endl;
+        break;
         }
-        else if( (range <= 750) && (range > 500) )
+        else
         {
-        cout << "Your guess was at least 500 off!" << endl;
-        gcount++;
-        }
-        else if( (range <= 500) && (range > 250) ) 
-        {
-         cout << "Your guess was at least 250 off!" << endl;
-         gcount++;
-        }
-        else if( (range <= 250) && (range > 100) )
-        {
-        cout << "Your guess was at least 100 off!" << endl;
-        gcount++;
-        }
-        else if( (range <= 100) && (range > 50) )
-        {
-        cout << "Your guess was at least 50 off!" << endl;
-        gcount++;
-        }
-        else if( (range <= 50) && (range > 20) )
-        {
-        cout << "Your guess was at least 20 off!" << endl;
-        gcount++;
-        }
-        else if( (range <= 20) && (range > 10) )
-        {
-        cout << "Your guess was at least 10 off!" << endl;
-        gcount++;
-        }
-        else if( (range <= 10) && (range > 5) )
-        {
-        cout << "Your guess was at least 5 off!" << endl;
-        gcount++;
-        }
-        else if( guesstreme == randomNumber3 )
-        {
-        cout << "Congratulations! You defeated Extreme mode! Press any button to continue or press N to exit." << endl;
+            if( range > 750 )
+            {
+            cout << "Your guess was more than 750 off! You have " << ( 14 - gcount)<<" attempts remaining.\n";
+            }
+            else if( range <= 750 && range > 500 )
+            {
+            cout << "Your guess was more than 500 off! You have " << ( 14 - gcount)<<" attempts remaining.\n";
+            }
+            else if( range <= 500 && range > 250 ) 
+            {
+            cout << "Your guess was more than 250 off! You have " << ( 14 - gcount)<<" attempts remaining.\n";
+            }
+            else if( range <= 250 && range > 100 )
+            {
+            cout << "Your guess was more than 100 off! You have " << ( 14 - gcount)<<" attempts remaining.\n";
+            }
+            else if( range <= 100 && range > 50 )
+            {
+            cout << "Your guess was more than 50 off! You have " << ( 14 - gcount)<<" attempts remaining.\n";
+            }
+            else if( range <= 50 && range > 20 )
+            {
+            cout << "Your guess was more than 20 off! You have " << ( 14 - gcount)<<" attempts remaining.\n";
+            }
+            else if( range <= 20 && range > 10 )
+            {
+            cout << "Your guess was more than 10 off! You have " << ( 14 - gcount)<<" attempts remaining.\n";
+            }
+            else if( range <= 10 && range > 5 )
+            {
+            cout << "Your guess was more than 5 off! You have " << ( 14 - gcount)<<" attempts remaining.\n";
+            }
+            else if( range <=5 && range > 0 )
+            {
+            cout << "Your guess was less than 5 off! You have " << ( 14 - gcount)<<" attempts remaining.\n";
+            }
+            else if( gcount == 15 )
+            {
+            cout << "Sorry, you have used all of your attempts. You lose! Press any button to continue or press N to exit." << endl;
+            break;
+            }
         }
       }
    }
 
  cin >> playagain;
  }while( playagain != 'N' && playagain != 'n' );
+ 
  
  }
 
